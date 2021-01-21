@@ -1,15 +1,15 @@
-def quick_sort(num_str):
-    length = len(num_str)
+def quick_sort(num_arry):
+    length = len(num_arry)
     if length <=1:
-        return num_str
+        return num_arry
     else:
-        pivot = num_str.pop()
+        pivot = num_arry.pop()
 
     
     items_greater = []
     items_lower = []
 
-    for item in num_str:
+    for item in num_arry:
         if item > pivot:
             items_greater.append(item)
         

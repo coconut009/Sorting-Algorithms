@@ -1,30 +1,30 @@
-def selection_sort(num_str):
-    length = len(num_str)
+def selection_sort(num_arry):
+    length = len(num_arry)
 
     for i in range (length):
         min_value_index =i
 
         for j in range (i, length):
-            if num_str[j] < num_str[min_value_index]:
+            if num_arry[j] < num_arry[min_value_index]:
                 min_value_index = j
 
         if min_value_index != i:
-                num_str[min_value_index], num_str[i] = num_str[i], num_str[min_value_index]
+                num_arry[min_value_index], num_arry[i] = num_arry[i], num_arry[min_value_index]
     
-    return num_str
+    return num_arry
 
-def quick_sort(num_str):
-    length = len(num_str)
+def quick_sort(num_arry):
+    length = len(num_arry)
     if length <=1:
-        return num_str
+        return num_arry
     else:
-        pivot = num_str.pop()
+        pivot = num_arry.pop()
 
     
     items_greater = []
     items_lower = []
 
-    for item in num_str:
+    for item in num_arry:
         if item > pivot:
             items_greater.append(item)
         
@@ -34,27 +34,27 @@ def quick_sort(num_str):
     return quick_sort(items_lower) + [pivot] + quick_sort(items_greater)
 
 
-def insertion_sort(num_str):
-    length =range(1,len(num_str)) 
+def insertion_sort(num_arry):
+    length =range(1,len(num_arry)) 
     for i in  length:
-        value_to_sort = num_str[i]
+        value_to_sort = num_arry[i]
 
-        while num_str[i-1] > value_to_sort and i>0:
-            num_str[i], num_str[i-1] = num_str[i-1], num_str[i]
+        while num_arry[i-1] > value_to_sort and i>0:
+            num_arry[i], num_arry[i-1] = num_arry[i-1], num_arry[i]
             i=i-1
-    return num_str
+    return num_arry
 
-def bubble_sort(num_str):
-    length = len(num_str)
+def bubble_sort(num_arry):
+    length = len(num_arry)
     value_sorted = False
 
     while not value_sorted:
         value_sorted = True
         for i in range (length-1):
-            if  num_str[i] > num_str[i+1]:
+            if  num_arry[i] > num_arry[i+1]:
                 value_sorted = False
-                num_str[i],num_str[i+1] = num_str[i+1],num_str[i]
-    return num_str
+                num_arry[i],num_arry[i+1] = num_arry[i+1],num_arry[i]
+    return num_arry
 
 print(selection_sort([77,71,26,20,0,12,57,24,23,48,1,25,56,98,63,50,28,39,96]))
 print(quick_sort([77,71,26,20,0,12,57,24,23,48,1,25,56,98,63,50,28,39,96]))
